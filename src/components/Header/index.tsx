@@ -7,8 +7,10 @@ export const Header = () => {
       <img src={Logo} alt="logo" />
 
       <nav className="flex items-center gap-5">
-        <HeaderLink>Eventos</HeaderLink>
-        <HeaderLink active>Participantes</HeaderLink>
+        <HeaderLink href="/eventos">Eventos</HeaderLink>
+        <HeaderLink href="/participantes" active>
+          Participantes
+        </HeaderLink>
       </nav>
     </div>
   );

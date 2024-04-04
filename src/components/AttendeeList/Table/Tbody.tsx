@@ -1,5 +1,6 @@
 import { MoreHorizontal } from "lucide-react";
 import { AttendeeListTableCheckbox } from "./Checkbox";
+import { IconButton } from "../../IconButton";
 
 export const AttendeeListTableTbody = () => (
   <tbody>
@@ -21,9 +22,7 @@ export const AttendeeListTableTbody = () => (
         <Td>7 dias atrás</Td>
         <Td>3 dias atrás</Td>
         <Td>
-          <button className="bg-black/20 hover:bg-black/40 duration-150 border border-white/10 rounded-md p-1.5">
-            <MoreHorizontal className="size-4 text-white" />
-          </button>
+          <IconButton Icon={MoreHorizontal} transparent />
         </Td>
       </tr>
     ))}
