@@ -7,6 +7,7 @@ import {
 import { IconButton } from "../../IconButton";
 
 interface Props {
+  show: number;
   total: number;
   page: number;
   pages: number;
@@ -14,6 +15,7 @@ interface Props {
 }
 
 export const AttendeeListTableTfoot = ({
+  show,
   total,
   page,
   pages,
@@ -27,7 +29,9 @@ export const AttendeeListTableTfoot = ({
   return (
     <tfoot>
       <tr>
-        <Td>Mostrando 10 de {total} itens</Td>
+        <Td>
+          Mostrando {show} de {total} itens
+        </Td>
 
         <Td>
           <div className="flex justify-end items-center gap-8">

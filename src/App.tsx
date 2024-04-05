@@ -1,14 +1,10 @@
 import { AttendeeList } from "./components/AttendeeList";
 import { Header } from "./components/Header";
 
-export const App = () => {
-  console.log(1 + 1);
+export const App = () => (
+  <div className="container mx-auto py-5 flex flex-col gap-5">
+    <Header />
 
-  return (
-    <div className="container mx-auto py-5 flex flex-col gap-5">
-      <Header />
-
-      <AttendeeList />
-    </div>
-  );
-};
+    <AttendeeList />
+  </div>
+);
