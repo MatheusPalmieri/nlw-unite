@@ -9,6 +9,9 @@ export const AttendeeListHeader = ({ search, setSearch }: Props) => {
   const handleSearch = (event: React.ChangeEvent<HTMLInputElement>) => {
     const value = event.target.value;
     setSearch(value);
+    const url = new URL(window.location.toString());
+    url.searchParams.set("search", value);
+    window.history.pushState({}, "", url.toString());
   };
 
   return (

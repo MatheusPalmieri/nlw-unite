@@ -11,14 +11,18 @@ interface Props {
 
 export const AttendeeListTable = ({ search }: Props) => {
   const [limit] = useState<number>(10);
-  const [page, setPage] = useState<number>(1);
+  const [page, setPage] = useState<number>(() => {
+    const url = new URL(window.location.toString());
+    const page = url.searchParams.get("page");
+    return page ? parseInt(page) : 1;
+  });
 
   const [pages, setPages] = useState<number>(1);
   const [total, setTotal] = useState<number>(0);
   const [attendees, setAttendees] = useState<Attendees[]>([]);
 
   useEffect(() => {
-    setPage(1);
+    search && setPage(1);
   }, [search]);
 
   useLayoutEffect(() => {

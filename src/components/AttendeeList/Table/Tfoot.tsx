@@ -21,10 +21,17 @@ export const AttendeeListTableTfoot = ({
   pages,
   setPage,
 }: Props) => {
-  const goToFirstPage = () => setPage(1);
-  const goToPreviousPage = () => setPage((p) => p - 1);
-  const goToNextPage = () => setPage((p) => p + 1);
-  const goToLastPage = () => setPage(pages);
+  const setCurrentPage = (newPage: number) => {
+    setPage(newPage);
+    const url = new URL(window.location.toString());
+    url.searchParams.set("page", newPage.toString());
+    window.history.pushState({}, "", url.toString());
+  };
+
+  const goToFirstPage = () => setCurrentPage(1);
+  const goToPreviousPage = () => setCurrentPage(page - 1);
+  const goToNextPage = () => setCurrentPage(page + 1);
+  const goToLastPage = () => setCurrentPage(pages);
 
   return (
     <tfoot>
