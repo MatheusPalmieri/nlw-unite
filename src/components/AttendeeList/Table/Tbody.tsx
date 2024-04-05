@@ -1,26 +1,37 @@
 import { MoreHorizontal } from "lucide-react";
 import { AttendeeListTableCheckbox } from "./Checkbox";
 import { IconButton } from "../../IconButton";
+import { attendees } from "../../../data/attendees";
+import dayjs from "dayjs";
+import relativeTime from "dayjs/plugin/relativeTime";
+import "dayjs/locale/pt-br";
 
-export const AttendeeListTableTbody = () => (
+dayjs.extend(relativeTime);
+dayjs.locale("pt-br");
+
+interface Props {
+  attendees: typeof attendees;
+}
+
+export const AttendeeListTableTbody = ({ attendees }: Props) => (
   <tbody>
-    {Array.from({ length: 10 }).map((_, index) => (
+    {attendees.map((attendee) => (
       <tr
         className="border-b border-white/10 hover:bg-white/5 duration-150"
-        key={index}
+        key={attendee.id}
       >
         <Td>
           <AttendeeListTableCheckbox />
         </Td>
-        <Td>12874</Td>
+        <Td>{attendee.id}</Td>
         <Td>
           <div className="flex flex-col gap-1">
-            <span className="font-semibold text-white">Matheus Palmieri</span>
-            <span>matheuspalmieridev@gmail.com</span>
+            <span className="font-semibold text-white">{attendee.name}</span>
+            <span>{attendee.email}</span>
           </div>
         </Td>
-        <Td>7 dias atrás</Td>
-        <Td>3 dias atrás</Td>
+        <Td>{dayjs().to(attendee.createdAt)}</Td>
+        <Td>{dayjs().to(attendee.checkedInAt)}</Td>
         <Td>
           <IconButton Icon={MoreHorizontal} transparent />
         </Td>

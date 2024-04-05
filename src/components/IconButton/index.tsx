@@ -1,5 +1,6 @@
 import { Type } from "lucide-react";
 import { ComponentProps } from "react";
+import { twMerge } from "tailwind-merge";
 
 interface Props extends ComponentProps<"button"> {
   Icon: typeof Type;
@@ -8,10 +9,14 @@ interface Props extends ComponentProps<"button"> {
 
 export const IconButton = ({ Icon, transparent = false, ...props }: Props) => (
   <button
-    className={`bg-white/${transparent ? 20 : 10} hover:bg-white/${
-      transparent ? 40 : 20
-    } duration-150 border border-white/10 rounded-md p-1.5`}
     {...props}
+    className={twMerge(
+      "border border-white/10 rounded-md p-1.5 duration-300",
+      transparent
+        ? "bg-black/20 hover:bg-black/40"
+        : "bg-white/10 hover:bg-white/20",
+      props.disabled ? "opacity-50" : null
+    )}
   >
     <Icon className="size-4 text-white" />
   </button>
