@@ -1,8 +1,6 @@
 <h1 align="center">NLW Unite React</h1>
 
-<p align="center">Desenvolvimento de uma aplicação front-end em ReactJS, aplicação dos conceitos de Propriedades, Estados e Componentes, tipagem com Typescript, tooling com Vite, interface responsiva com TailwindCSS, consumo de API Node.js, uso de URL states.
-
-</p>
+<p align="center">Development of a front-end application in ReactJS, applying concepts of Properties, States, and Components, typing with Typescript, tooling with Vite, responsive interface with TailwindCSS, consumption of Node.js API, and utilization of URL states.</p>
 
 <br />
 
