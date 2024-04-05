@@ -1,4 +1,4 @@
-<h1 align="center">NLW Unite React</h1>
+<h1 align="center">NLW Unite</h1>
 
 <p align="center">Development of a front-end application in ReactJS, applying concepts of Properties, States, and Components, typing with Typescript, tooling with Vite, responsive interface with TailwindCSS, consumption of Node.js API, and utilization of URL states.</p>
 
@@ -21,7 +21,7 @@
 <a href="https://nlw-unite.netlify.app" target="_blank">Access the Project's website by clicking here.</a>
 
 ```
-https://matheuspalmieri-blog.netlify.app
+https://nlw-unite.netlify.app
 ```
 
 <br />
@@ -36,7 +36,7 @@ https://matheuspalmieri-blog.netlify.app
 #### Clone the repository and navigate to the folder
 
 ```
-$ git clone https://github.com/MatheusPalmieri/nlw-unite-reactjs && cd nlw-unite-reactjs
+$ git clone https://github.com/MatheusPalmieri/nlw-unite && cd nlw-unite
 ```
 
 #### Installing necessary dependencies
